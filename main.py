@@ -70,10 +70,10 @@ def must_buy():
 # ----------------------------------INSTRUCTION-----------------------------------------
 answer2 = must_buy()
 
-if answer2 == "yes":
+while answer2 != "yes":
+    answer2 = must_buy()
+else:
     i = dish_details[0]['strInstructions']
     instruction = list(map(lambda x: x.replace('\n', '   '), i))
     instruction = ''.join(instruction)
     window = Recipe(dish_pic, instruction, dish_name)
-else:
-    must_buy()
